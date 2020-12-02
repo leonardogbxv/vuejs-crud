@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <!-- Diretiva "v-for" para pegar os usuários da API -->
-        <tr v-for="(user, index) in users.users" :key="user._id">
+        <tr v-for="(user, index) in users.users" :key="user._id" class="m-5">
           <th scope="row">{{ index + 1 }}</th>
           <td>{{ user._id }}</td>
           <td>{{ user.name }}</td>
@@ -84,5 +84,7 @@ export default {
 </script>
 
 <style scoped>
-
+th {
+  padding-left: 1.2rem;
+}
 </style>
