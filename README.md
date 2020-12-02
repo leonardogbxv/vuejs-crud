@@ -2,10 +2,9 @@
 
 CRUD de usuários utlizando Vue.js no front-end e Node.js com MongoDB no back-end.
 
-<hr>
 <img src="./client/src/assets/homepage.png" />
 <details>
-  <summary>Telas da aplicação <sub><sup>(click here)</sup></sub></summary>
+  <summary>Modal<sub><sup>(click here)</sup></sub></summary>
 <pre>
 <img src="./client/src/assets/modal_cadastro.png" />
 <img src="./client/src/assets/modal_editar.png" />
