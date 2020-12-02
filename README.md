@@ -4,7 +4,7 @@ CRUD de usuários utlizando Vue.js no front-end e Node.js com MongoDB no back-en
 
 <img src="./client/src/assets/homepage.png" />
 <details>
-  <summary>Modal<sub><sup>(click here)</sup></sub></summary>
+  <summary>Modal <sub><sup>(click here)</sup></sub></summary>
 <pre>
 <img src="./client/src/assets/modal_cadastro.png" />
 <img src="./client/src/assets/modal_editar.png" />
@@ -12,6 +12,8 @@ CRUD de usuários utlizando Vue.js no front-end e Node.js com MongoDB no back-en
 </details>
 
 ## Instalação
+
+Necessário ter instalado o [**MongoDB**](https://www.mongodb.com/try/download/community "**MongoDB**") e [**Node.js**](https://nodejs.org/en/download/ "**Node.js**")
 
 ```bash
 # Clone o repositório
