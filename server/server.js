@@ -1,9 +1,12 @@
-// Importa express
+// Importa express e cors
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
-// Middlewares
+// Middleware para passar um Objeto para Objeto JSON (em uma requisição)
 app.use(express.json());
+// Middleware para permitir acesso à API de um dominio diferente (Nesse caso, o nosso 'client': localhost:8080)
+app.use(cors());
 
 // Aplicação vai usar a rota "/api/users" como correspondente
 // Ex: "/api/users/abc123", 
