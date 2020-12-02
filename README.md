@@ -34,7 +34,7 @@ $ cd ..
 $ npm run dev
 ```
 
-Agora temos a nossa API do back-end rodando na porta 3000, e o front-end na porta 8080.
+Agora temos o front-end rodando na porta 3000, e a API REST na porta 8080.
 
 ## Funcionalidades
 
