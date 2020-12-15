@@ -1,6 +1,8 @@
 # VUE.JS CRUD
 
-CRUD de usuários utlizando Vue.js no front-end e Node.js com MongoDB no back-end.
+CRUD of users using Vue.js on the front-end and Node.js with MongoDB on the back-end API.
+
+*Read this in other languages: [English](README.md), [Português brasileiro](README.pt-br.md)*
 
 <img src="./client/src/assets/homepage.png" />
 <details>
@@ -11,78 +13,77 @@ CRUD de usuários utlizando Vue.js no front-end e Node.js com MongoDB no back-en
 </pre>
 </details>
 
-## Instalação
+## Installation
 
-Necessário ter instalado o [**MongoDB**](https://www.mongodb.com/try/download/community "**MongoDB**") e [**Node.js**](https://nodejs.org/en/download/ "**Node.js**")
+You must have installed [**MongoDB**](https://www.mongodb.com/try/download/community "**MongoDB**") and [**Node.js**](https://nodejs.org/en/download/ "**Node.js**") on your machine.
 
 ```bash
-# Clone o repositório
+# Clone the repository
 $ git clone https://github.com/leonardogbxv/vuejs-crud.git
-# Entre na pasta do projeto
+# Go to project folder
 $ cd vuejs-crud
-# Instale as dependências do projeto
+# Install project dependecies
 $ npm install
-# Entre na pasta do front-end
+# Go to front-end folder
 $ cd client
-# Instale as dependências do front-end
+# Install front-end dependecies
 $ npm install
-# Execute o front-end
+# Run front-end
 $ npm run serve
-# Volte para a raiz do projeto (vuejs-crud)
+# Return to the project root
 $ cd ..
-# Execute o back-end
+# Run back-end api
 $ npm run dev
 ```
 
-Agora temos o front-end rodando na porta 3000, e a API REST na porta 8080.
+Now we have the front-end running on port 3000 and the REST API on port 8080.
 
-## Funcionalidades
+## Features
 
-- Cadastrar novos usuários com nome, e-mail e senha; **(CREATE)**
-- Listar todos os usuários da aplicação em uma tabela na página inicial, tabela essa com as seguintes informações: **(READ)**
-  - Usuario ID (ObjectId único do usuário no MongoDB);
+- Register new users with name, e-mail and passowrd; **(CREATE)**
+- List all users of the application in a table on the home page, a table with the following information: **(READ)**
+  - Usuario ID (Unique ObjectID of user in the MongoDB);
   - Nome;
   - E-mail;
   - Senha;
-- Editar informações de um usuário já cadastrado; **(UPDATE)**
-- Remover um usuário da aplicação; **(DELETE)**
+- Edit information for an already registered user; **(UPDATE)**
+- Remove a user from the application; **(DELETE)**
 
-### Funcionamento 
+### Modus Operandi
 
-Nesse projeto, é realiza a divisão entre o front-end e back-end, de modo que ambos iniciem em endereços/portas diferentes.
+In this project, the front-end and back-end were developed separately, thereby both of them will run on different ports.
 
-#### API REST
+#### REST API
 
-No back-end, é onde temos a nossa API e banco de dados, desenvolvidos em Node.js e MongoDB, rodando na porta 3000. Todas as rotas de *GET*, *POST*, *PUT* e *DELETE* podem ser localizadas no diretório `server>routes>api>users.js`, elas correspondem à rota http `/api/users` da aplicação (http://localhost:3000/api/users). A conexão com o banco de dados é feita no diretório `server>database>db.js`, nesse arquivo também temos as funções do CRUD sendo exportadas para serem usadas nas rotas da API.
+On the back-end we have our API and database, developed in Node.js and MongoDB, running on the port 3000. All the *GET*, *POST*, *PUT* and *DELETE* routes can be located in the routes directory -> `server>routes>api>users.js`, they correspond to the application's http route `/api/users` (http://localhost:3000/api/users). The database connection is created in the database folder -> `server>database>db.js`, in this file we also have the CRUD functions which are exported to be used in the API routes.
 
-> Foi usado a aplicação Postman para testar envios e recebimento de dados, via requisições HTTP, para a API. A collection com todas as requisições está no diretório `>server>postman>vuejs-crud.postman_collection.json`, caso queria testar no seu Postman.
+> Postman was used to test HTTP Requests to the API. The collection with all requests made are located in the postman directory, inside the server folder: `>server>postman>vuejs-crud.postman_collection.json`.
 
 #### Front-end
 
-O front-end, nosso "client", foi desenvolvido totalmente com Vue.js - framework JavaScript -, este rodando na porta 8080 (http://localhost:8080). O projeto foi construído com o cliente oficial do Vue.js, o Vue CLI, facilitando a configuração e geração da aplicação Vue.js; Opção escolhida por se tratar de um ambiente mais profissional, de acordo com pesquisas, porém a utilização do Vue.js com a inclusão direta da tag `<script>` também foi estudada. 
+On the front-end we have our "client", developed in Vue.js — JavaScript framework —, running on the port 8080. The project was built with the official Vue.js client, the Vue CLI, helping with configuration and generating of the Vue.js application; According to research, it's widely used in professional environments, therefore the vue cli approach was chosen to continue the development. However, the use of Vue.js with the direct inclusion of the `<script>` tag was also studied.
 
-Essa aplicação Vue, é composta por 4 componentes:
+This Vue application consists of 4 components:
 
-- `<Header />`: Cabeçalho com título e "painel de navegação" da aplicação;
-- `<UserRegisterForm />`: Modal com o formulário para cadastro de um novo usuário;
-- `<UserEditForm />`: Modal com o formulário para editar e enviar as alterações do usuário;
-- `<UsersTable />`: Tabela com toda a listagem dos usuários cadastrados no sistema.
+- `<Header />`: Header with the title and navigation panel of the application;
+- `<UserRegisterForm />`: Modal with the form to register a new user;
+- `<UserEditForm />`: Modal with the form to edit user data;
+- `<UsersTable />`: Table with all the list of users registered in the system.
 
-Esses componentes são todos renderizados no `App.vue`, a raiz da aplicação. Ele define o template da nossa página, adicionando os componentes na tag `<template>`.
-As requisições, para a API do back-end, são todas feitas usando a própria Fetch API do JavaScript, o CRUD é posto em funcionamento com ela. O *GET* e *DELETE* são realizados no componente `<UsersTable />`, *POST* no modal de cadastro `<UserRegisterForm />`, e a requisição *PUT* é feita no modal de edição `<UserEditForm />`.
+These components are all rendered in the `App.vue`, the application root. It defines the template of our page, adding the components in the `<template>` tag. The requests for the back-end API are all made using JavaScript's Fetch API, it handles the CRUD operations on the front-end. The *GET* and *DELETE* are performed in the `<UsersTable />` component , *POST* in the registration modal `<UserRegisterForm />`, and the *PUT* request in the editing modal `<UserEditForm /> `.
 
-O framework Bootstrap, foi usado para fazer a resposividade e estilização de alguns elementos da aplicação. Os modais, de cadastro e edição, foram estilizados com CSS puro.
+Bootstrap framework was used to make the responsiveness and stylization of some elements of the application. Modals of register and editing were stylized with pure CSS.
 
-## Tecnologias
+## Dependencies
 
-Abaixo estão as tecnologias e depêndencias utilizadas no desenvolvimento do projeto.
+Project dependencies and for what they were used for.
 
-- [**Vue.js:**](https://vuejs.org/ "**Vue.js:**") Framework JavaScript Progressivo, usado para desenvolver interfaces de usuário dinâmicas com HMTL, CSS e JS.
-- [**Bootstrap:**](https://getbootstrap.com/docs/4.5/getting-started/introduction/ "**Bootstrap:**") Framework front-end com uma grande coleção de códigos CSS, foi usado no projeto para fazer a estilização e responsividade.
-- [**Node.js:**](https://nodejs.org/en/docs/ "**Node.js:**") Ambiente JavaScript no lado do servidor, o back-end do projeto foi todo desenvolvido em Node.js.
-- [**Express:**](https://github.com/expressjs/express "**Express:**") Framework do Node.js, facilita a criação de aplicações web com configurações de rotas, middlewares e outras funções;
-- [**Cors:**](https://www.npmjs.com/package/cors "**Cors:**") Pacote Node.js para habilitar o CORS - "Cross-Origin Resource Sharing" - na aplicação. No caso, requisições para outro domínio - localhost:3000 (nossa API).
-- [**MongoDB:**](https://docs.mongodb.com/ "**MongoDB:**") Banco de dados NoSQL utilizado no projeto.
-- [**Nodemon:**](https://github.com/remy/nodemon "**Nodemon:**") Usado para auxiliar no desenvolvimento, sempre atualizando a página web quando houver mudanças nos arquivos;
+- [**Vue.js:**](https://vuejs.org/ "**Vue.js:**") Progressive JavaScript framework for building dynamic user interfaces with HTML, CSS and JS;
+- [**Bootstrap:**](https://getbootstrap.com/docs/4.5/getting-started/introduction/ "**Bootstrap:**") Front-end framework with a large collection of CSS codes, was used in the project to make stylization and responsiveness;
+- [**Node.js:**](https://nodejs.org/en/docs/ "**Node.js:**") Server-side JavaScript environment, our back-end API was entirely developed on Node.js;
+- [**Express:**](https://github.com/expressjs/express "**Express:**") Node.js framework which helps generating web applications with route configurations, middlewares and other functions;
+- [**Cors:**](https://www.npmjs.com/package/cors "**Cors:**") Node.js package to enable CORS - "Cross-Origin Resource Sharing" - in the application. In our case, send requests for another domain - localhost: 3000 (API);
+- [**MongoDB:**](https://docs.mongodb.com/ "**MongoDB:**") NoSQL database;
+- [**Nodemon:**](https://github.com/remy/nodemon "**Nodemon:**") Helping in the development always refreshing the web page when file changes are made;
 
 ###### :D
