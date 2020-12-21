@@ -49,17 +49,17 @@ Now we have the front-end running on port 3000 and the REST API on port 8080.
 - Edit information for an already registered user; **(UPDATE)**
 - Remove a user from the application; **(DELETE)**
 
-### Modus Operandi
+## How it works
 
 In this project, the front-end and back-end were developed separately, thereby both of them will run on different ports.
 
-#### REST API
+### REST API
 
 On the back-end we have our API and database, developed in Node.js and MongoDB, running on the port 3000. All the *GET*, *POST*, *PUT* and *DELETE* routes can be located in the routes directory -> `server>routes>api>users.js`, they correspond to the application's http route `/api/users` (http://localhost:3000/api/users). The database connection is created in the database folder -> `server>database>db.js`, in this file we also have the CRUD functions which are exported to be used in the API routes.
 
 > Postman was used to test HTTP Requests to the API. The collection with all requests made are located in the postman directory, inside the server folder: `>server>postman>vuejs-crud.postman_collection.json`.
 
-#### Front-end
+### Front-end
 
 On the front-end we have our "client", developed in Vue.js — JavaScript framework —, running on the port 8080. The project was built with the official Vue.js client, the Vue CLI, helping with configuration and generating of the Vue.js application; According to research, it's widely used in professional environments, therefore the vue cli approach was chosen to continue the development. However, the use of Vue.js with the direct inclusion of the `<script>` tag was also studied.
 
