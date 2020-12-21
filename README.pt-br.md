@@ -49,17 +49,17 @@ Agora temos o front-end rodando na porta 3000, e a API REST na porta 8080.
 - Editar informações de um usuário já cadastrado; **(UPDATE)**
 - Remover um usuário da aplicação; **(DELETE)**
 
-### Funcionamento 
+## Como funciona
 
 Nesse projeto, é realiza a divisão entre o front-end e back-end, de modo que ambos iniciem em endereços/portas diferentes.
 
-#### API REST
+### API REST
 
 No back-end, é onde temos a nossa API e banco de dados, desenvolvidos em Node.js e MongoDB, rodando na porta 3000. Todas as rotas de *GET*, *POST*, *PUT* e *DELETE* podem ser localizadas no diretório `server>routes>api>users.js`, elas correspondem à rota http `/api/users` da aplicação (http://localhost:3000/api/users). A conexão com o banco de dados é feita no diretório `server>database>db.js`, nesse arquivo também temos as funções do CRUD sendo exportadas para serem usadas nas rotas da API.
 
 > Foi usado a aplicação Postman para testar envios e recebimento de dados, via requisições HTTP, para a API. A collection com todas as requisições está no diretório `>server>postman>vuejs-crud.postman_collection.json`, caso queria testar no seu Postman.
 
-#### Front-end
+### Front-end
 
 O front-end, nosso "client", foi desenvolvido totalmente com Vue.js - framework JavaScript -, este rodando na porta 8080 (http://localhost:8080). O projeto foi construído com o cliente oficial do Vue.js, o Vue CLI, facilitando a configuração e geração da aplicação Vue.js; Opção escolhida por se tratar de um ambiente mais profissional, de acordo com pesquisas, porém a utilização do Vue.js com a inclusão direta da tag `<script>` também foi estudada. 
 
