@@ -2,7 +2,7 @@
 
 CRUD of users using Vue.js on the front-end and Node.js with MongoDB on the back-end API.
 
-*Read this in other languages: [English](README.md), [Português brasileiro](README.pt-br.md)*
+*🌎 [English](README.md), [Português brasileiro](README.pt-br.md)*
 <hr/>
 <img src="./client/src/assets/homepage.png" />
 <details>
