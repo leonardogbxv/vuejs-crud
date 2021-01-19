@@ -40,8 +40,8 @@ Now we have the front-end running on port 3000 and the REST API on port 8080.
 
 ## Features
 
-- Register new users with name, e-mail and passowrd; **(CREATE)**
-- List all users of the application in a table on the home page, a table with the following information: **(READ)**
+- Register new users with name, e-mail and password; **(CREATE)**
+- List all users in a table on the home page: **(READ)**
   - Usuario ID (Unique ObjectID of user in the MongoDB);
   - Nome;
   - E-mail;
@@ -55,7 +55,7 @@ In this project, the front-end and back-end were developed separately, thereby b
 
 ### REST API
 
-On the back-end we have our API and database, developed in Node.js and MongoDB, running on the port 3000. All the *GET*, *POST*, *PUT* and *DELETE* routes can be located in the routes directory -> `server>routes>api>users.js`, they correspond to the application's http route `/api/users` (http://localhost:3000/api/users). The database connection is created in the database folder -> `server>database>db.js`, in this file we also have the CRUD functions which are exported to be used in the API routes.
+On the back-end we have our API and database, developed in Node.js and MongoDB, running on the port 3000. All the *GET*, *POST*, *PUT* and *DELETE* routes can be located in the routes directory -> `server>routes>api>users.js` they correspond to the application's http route `/api/users`. The database connection is created in the database folder -> `server>database>db.js` here we also have the CRUD functions which are exported to be used in the API routes.
 
 > Postman was used to test HTTP Requests to the API. The collection with all requests made are located in the postman directory, inside the server folder: `>server>postman>vuejs-crud.postman_collection.json`.
 
@@ -70,7 +70,7 @@ This Vue application consists of 4 components:
 - `<UserEditForm />`: Modal with the form to edit user data;
 - `<UsersTable />`: Table with all the list of users registered in the system.
 
-These components are all rendered in the `App.vue`, the application root. It defines the template of our page, adding the components in the `<template>` tag. The requests for the back-end API are all made using JavaScript's Fetch API, it handles the CRUD operations on the front-end. The *GET* and *DELETE* are performed in the `<UsersTable />` component , *POST* in the registration modal `<UserRegisterForm />`, and the *PUT* request in the editing modal `<UserEditForm /> `.
+These components are all rendered in the `App.vue`, the application root. It defines the template of our page, adding the components in the `<template>` tag. The requests for the back-end API are all made using JavaScript's Fetch API, it handles the CRUD operations on the front-end. The *GET* and *DELETE* are performed in the `<UsersTable />` component , *POST* in the registration modal `<UserRegisterForm />` and the *PUT* request in the editing modal `<UserEditForm /> `.
 
 Bootstrap framework was used to make the responsiveness and stylization of some elements of the application. Modals of register and editing were stylized with pure CSS.
 
